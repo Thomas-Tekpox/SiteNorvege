@@ -1,0 +1,968 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins";
+    scroll-behavior: smooth;
+}
+
+/*styles de polices*/
+@font-face {font-family: "poppins";src: url("../../media-addon/font/poppins.ttf");}
+@font-face {font-family: "poppins-bold";src: url("../../media-addon/font/poppins-bold.ttf");}
+@font-face {font-family: "poppins-semi-bold";src: url("../../media-addon/font/poppins-semi-bold.ttf");}
+
+/*-------------------------------------------------Barre du haut----------------------------------------------------------------*/
+
+
+#flag{height:50%; position: absolute; left: 5%;}
+
+nav{
+    width: 100%;
+    padding: 1% 0;
+    text-align: center;
+    background-color: rgb(37, 37, 37);
+    position: fixed;
+    z-index: 99; top:0; left: 0;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+/*
+#music{
+    position: absolute;
+    top: 4; right: 38%;
+    padding: 1%;
+    color: white;
+}
+
+#sound{
+    position: absolute;
+    height: 100%; top: -1; right: 27%;
+    padding: 1%;
+    outline: none;
+}
+*/
+#account{
+    position: absolute;
+    height: 100%; top: 0; right: 5%;
+    padding: 1%;
+}
+#connexion-button{color: #00B4CC;}
+
+#inscription-button{
+    border-bottom: 2px dashed #fff;
+}
+
+#connexion-button, #inscription-button{
+    font-size: 0.7em;  padding: 5px; letter-spacing: 1px;
+}
+
+/*-------------------------------------------------Header----------------------------------------------------------------*/
+
+
+#header-home{
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-bottom: 5%;
+    line-height: 60vh;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1{
+    font-size: 5em;
+    z-index: 50;
+    position: absolute;
+    color: white;
+    top: 0; left: 0; width: 100%; text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 25px black;
+    letter-spacing: 4px;
+    font-family: "poppins-bold";
+
+}
+
+#bloc-sombre{width: 100%; height: 60vh; position: absolute; 
+    top: 2vh; background-color: rgba(0, 0, 0, 0.4); display: none;}
+
+header video{
+    margin-top: -100px;
+    width: 100%;
+}
+
+
+/*-------------------------------------------------Barre de recherche----------------------------------------------------------------*/
+
+main{
+    position: relative;
+}
+
+article{
+    margin: 5% 0;
+    padding: 10% 0;
+    width: 100%;
+}
+
+h2{
+    font-family: "poppins-semi-bold";
+    letter-spacing: -1px;
+    margin-bottom: 2%;
+    font-size: 2em;
+}
+
+.erase-text{font-family: "poppins-semi-bold";}
+
+.search-info, #resultat p{
+    text-decoration: underline;
+    font-size: 1.2em; font-family: "poppins-semi-bold";
+}
+
+#resultat{
+    text-align: center;margin: 5% 0 0 0;
+}
+
+#resultat p{text-align: center; }
+
+
+#lien-resultat,#lien-resultat:visited,#lien-resultat:hover,#lien-resultat:active{
+    backface-visibility:hidden;
+    position:relative;
+    transition:0.5s color ease;
+    text-decoration:none;
+    color:black;
+    font-size:1em;
+}
+
+#lien-resultat:hover{
+    color:#00B4CC;
+}
+
+#lien-resultat.before:before,#lien-resultat.after:after{
+    content: "";
+    transition:0.5s all ease;
+    backface-visibility:hidden;
+    position:absolute;
+  }
+#lien-resultat.before:before{
+    top:-0.25em;
+  }
+#lien-resultat.after:after{
+    bottom:-0.25em;
+  }
+#lien-resultat.before:before,#lien-resultat.after:after{
+    height:5px;
+    height:0.35rem;
+    width:0;
+    background:#007a8a;
+  }
+#lien-resultat.before:hover:before,#lien-resultat.after:hover:after{
+    width:100%;
+  }
+.bordure-resultat{
+    box-sizing:border-box;
+    position:relative;
+    font-size:1.5em;
+    overflow:hidden;
+    margin: 1% 0 1% -0.4em;
+  }
+.bordure-resultat #lien-resultat{
+    position:static;
+    font-size:100%;
+    padding:0.2em 0.4em;
+}
+.bordure-resultat:before,.bordure-resultat:after{
+    content: "";
+    box-sizing:border-box;
+    transition:0.25s all ease;
+    backface-visibility:hidden;
+    position:absolute;
+    width:5px;
+    width:0.35rem;
+    height:0;
+    background:#007a8a;
+}
+.bordure-resultat:before{left:0;bottom:-0.2em;}
+.bordure-resultat.individual:before{transition-delay:0.6s;}
+.bordure-resultat:after{right:0;top:-0.2em;}
+.bordure-resultat.individual:after{transition-delay:0.2s;}
+.bordure-resultat #lien-resultat:before{left:0;transition:0.25s all ease;}
+.bordure-resultat #lien-resultat:after{right:0;transition:0.25s all ease;}
+.bordure-resultat.individual #lien-resultat:after{transition:0.25s all ease 0.4s;}
+.bordure-resultat:hover:before,.bordure-resultat:hover:after{height:calc(100% + 0.4em);}
+.bordure-resultat:hover #lien-resultat:before,.bordure-resultat:hover #lien-resultat:after{width:100%;}
+
+.centered-title{text-align: center;}
+
+#searchbar{
+    display: flex;
+}
+
+.search-flex{flex: 4;}
+
+input{
+    padding: 10px;
+}
+
+#search-terms{
+    flex: 4;
+    border: 3px solid #00B4CC;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+#search-terms:focus{
+    color: #00B4CC;
+  }
+  
+
+#search-button{
+    flex: 1;
+    outline: none;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+}
+
+/*------------------------------------Liste des lieux----------------------------------------------------*/
+
+#liste-lieux{
+    background-color: rgb(37, 37, 37);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    list-style: none;
+}
+
+#liste-lieux a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #424242;
+    padding: 5px;
+
+
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0px;
+    background: transparent;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+}
+
+#liste-lieux a::after {
+    content: '';
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -75px;
+    background-image: linear-gradient(90deg, #e9bd46 0%, 
+    #d6ab34 40%, transparent 100%);
+    z-index: -99;
+    transition: all 1s;
+  }
+
+
+#liste-lieux a:hover::after {
+    transform: rotate(45deg);
+}
+
+#liste-lieux ul{display: flex; flex-direction: row;}
+
+#liste-lieux div{flex: auto;}
+.bloc-lieux{flex: 1;}
+
+#liste-lieux li{
+    background-color: #424242;
+    transition-duration: .1s;
+    list-style: none;
+    display: flex; flex-direction: column;height: 100px; line-height: 100px; margin: 50px;
+}
+
+#liste-lieux li:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}  
+
+
+/*-------------------------------------------------Carte de la Norvège----------------------------------------------------------------*/
+
+
+#map{
+    width: 40%;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+#map path{
+    fill: #00B4CC;
+    stroke: white;
+    stroke-width: 1px;
+}
+
+#map path:hover{
+    transition: 0.3s;
+    fill: #007a8a;
+}
+
+#map .forbidden path{
+    fill: lightgray; cursor:not-allowed;
+}
+
+/*-------------------------------------------------Remonter en haut de la page----------------------------------------------*/
+
+#scrollUp{
+    position: fixed;
+    bottom : 10px;
+    right: -100px;
+    opacity: 0.5;
+    transition-duration: .3s;
+    scroll-behavior: smooth;
+}
+
+/*-------------------------------------------------footer----------------------------------------------------------------*/
+
+
+footer{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    margin-top: 5%;
+    padding: 0 0 5% 0;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+}
+
+.btnretour{
+    background-color: #00B4CC;
+    border: none;
+    color: white;
+    padding: 1% 2%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btnretour:active{
+    background-color: #007a8a;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5) inset;
+}
+
+footer h2{letter-spacing: 1px; font-family: "poppins"; }
+
+.titre-contact{margin-bottom: 10%;}
+
+.footer-content{display: flex;}
+
+
+.footer-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.box .contact-content{margin: 20px 0 0 0;}
+
+.left .contact-content .social{margin: 20px 0 0 0;}
+
+.left .contact-content .social a{margin: 0 2px;}
+
+.left .contact-content .social a span{
+    height: 40px;
+    width: 40px;
+    color: #00B4CC;
+    background: #424242;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.left .contact-content .social a span:hover{background: #007a8a;}
+
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 25%;
+   }
+
+.right h2{margin-bottom: -1.5em ;}
+
+#contact-form input, #contact-form textarea{
+    border: none;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    background-color: transparent;
+    border-bottom: 2px solid lightgray;
+    outline: none;
+    color: white;
+}
+
+#contact-form #contact-email{height: 1em;}
+
+#contact-form textarea{border: 2px solid white; padding: 5px;}
+
+#contact-form #contact-valide{
+    border-bottom: none; cursor: pointer; color: white; background-color: #00B4CC; transition-duration: .3s;
+    margin-top: -2%;
+}
+
+#contact-form #contact-valide:hover{background-color: #007a8a;}
+
+#label-email{margin-top: 25%;}
+
+#champ-requis{font-size: 0.5em;}
+
+#signature{margin-top: 5%;margin-bottom: 0;}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------Page de connexion----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+.body-connexion{
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 50, 0.6),rgba(0, 0, 50, 0.6)),url("../../media-addon/image-video/connexion.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    overflow-y: hidden;
+}
+
+.titre-contact{
+    margin-top: 50px;
+    color: #fff;
+    transition: all 4s ease-in-out;
+}
+
+.titre-contact h1{
+    font-size: 2em;
+    line-height: 10px;
+    margin-bottom: 2%;
+}
+
+.titre-contact h2{
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+#connexion-form{
+    margin-top: 50px;
+    transition: all 4s ease-in-out;
+}
+
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+    height: 45px;
+}
+
+.connexion-submit{
+    background: #00B4CC;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+    transition-duration: 0.3s;
+}
+
+.connexion-submit:hover{
+    background-color: #007a8a;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logged{font-size: 1em;}
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------Page d'inscription----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+.lien-connexion{color: white;}
+
+.lien-connexion:hover{color: white; text-decoration: none;}
+
+#titre-contact-inscription{
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+
+.erreur{
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    margin: 1% 30%;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------Erreur 404----------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+#error_body {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(125deg,#6a89cc,#b8e994);
+}
+
+#error {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #343434;
+}
+
+#error h1{
+    font-size: 10em;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+    background: url(../../media-addon/image-video/norvege.jpg) center no-repeat;
+}
+
+#error a{
+    text-decoration: none;
+    background: #e55039aa;
+    color: #fff;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    margin-top: 5%;
+}
+
+#error a:hover{
+    background: #e55039
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------Page de contenu----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+/*=============================================Page Commune=====================================*/
+.img-page{
+    position: relative;
+    background-image: url("../../media-addon/image-video/oslo.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, .5);
+}
+
+
+.header-page{
+    line-height: 100vh;
+    font-size: 4em;
+    background-position: bottom;
+}
+
+
+.container{
+    position: relative; width: 100%;
+    height: 100vh;
+    background-color: #007a8a;
+}
+
+.footer-page{
+    margin-top: 0;
+}
+
+.flex-container {
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.flex-container p{
+    flex: 1 1 auto;
+    font-size: 1em;
+    font-size: larger;
+}
+
+.photo {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+}
+
+.photo img{margin: 10px; flex: 1;}
+
+.bloc-photo{flex: 3;}
+
+.bloc-1,.bloc-2{height: 300px;}
+
+.bloc-1{flex: 1 1 auto;}
+
+.bloc-2{
+    flex: 1 2 auto;
+    position: right;
+}
+
+.background1{background: linear-gradient(135deg, #115666, #2193b0);}
+.background2{background: linear-gradient(135deg,  #d6ab34, #f1c751);}
+.background3{background: linear-gradient(135deg, #0c0c0c, #3b3b3b);}
+
+/*=====================================Page Oslo=====================================*/
+
+/*----remise en page image----*/
+
+#Oslo_scale_1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 8vh;
+    overflow: hidden;
+}
+
+#Oslo_scale_2 {
+    padding-top: 12vh;
+    overflow: hidden;
+}
+
+/*----image de fond----*/
+
+#img-oslo1 {background-image: url("../../media-addon/image-video/sunset.jpg");}
+#img-oslo2 {background-image: url("../../media-addon/image-video/oslo_snow.jpg");}
+#img-oslo3 {background-image: url("../../media-addon/image-video/sculpture_oslo.jpg");}
+#img-oslo4 {background-image: url("../../media-addon/image-video/oslo_opera.jpg");}
+#img-oslo5 {background-image: url("../../media-addon/image-video/folk-dance.jpg");}
+
+
+/*---- affichage image de paragraphe----*/
+
+#Oslo_a1, #Oslo_b1, #Oslo_c1, #Oslo_d1, #Oslo_e1, #Oslo_a2, #Oslo_b2, #Oslo_c2, #Oslo_d2, #Oslo_a3, #Oslo_c3, #Oslo_d3 {
+    height: 40vh;
+    width: 20vw;
+    max-width: 480px;
+    max-height: auto;
+    padding: 0 2%;
+}
+
+#Oslo_a1, #Oslo_b1, #Oslo_c1, #Oslo_d1, #Oslo_e1 {flex: 1 1 auto;}
+#Oslo_a2, #Oslo_b2, #Oslo_c2, #Oslo_d2 {flex: 1 2 auto;}
+#Oslo_a3, #Oslo_c3, #Oslo_d3 {flex: 1 3 auto;}
+
+/*=====================================Le canal du telemark=====================================*/
+
+#header-telemark{font-size: .8em; background-image: url("../../media-addon/image-video/Canal1.jpg");}
+
+#img-telemark1{background-image: url("../../media-addon/image-video/Canal2.jpg");}
+#img-telemark2{background-image: url("../../media-addon/image-video/Canal3.jpg");}
+#img-telemark3{background-image: url("../../media-addon/image-video/Canal4.jpg");}
+
+/*=====================================L'eglise en bois debout d-urnes=====================================*/
+
+#header-eglise{font-size: .8em; background-image: url("../../media-addon/image-video/eglise1.jpg");}
+
+#img-eglise1{background-image: url("../../media-addon/image-video/eglise3.jpg");}
+#img-eglise2{background-image: url("../../media-addon/image-video/eglise4.jpg");}
+#img-eglise3{background-image: url("../../media-addon/image-video/eglise9.jpg");}
+
+/*=====================================Svalbard=====================================*/
+
+#header-archipel{font-size: 1em;background-image: url("../../media-addon/image-video/archipel-fond1.jpg");}
+
+#img-archipel1{background-image: url("../../media-addon/image-video/archipel-fond2.jpg");}
+#img-archipel2{background-image: url("../../media-addon/image-video/archipel-fond3.jpg");}
+#img-archipel3{background-image: url("../../media-addon/image-video/archipel-fond4.jpg");}
+
+/*=====================================Roros et la circonférence=====================================*/
+
+#header-roros{font-size: 1em; background-image: url("../../media-addon/image-video/roros.jpg");}
+
+#img-roros1{background-image: url("../../media-addon/image-video/roros12.jpg");}
+#img-roros2{background-image: url("../../media-addon/image-video/roros13.jpg");}
+#img-roros3{background-image: url("../../media-addon/image-video/roros14.jpg");}
+
+/*=====================================Tromso=====================================*/
+
+#header-tromso{font-size: 3em; background-image: url("../../media-addon/image-video/tromso2.jpg");}
+
+#img-tromso1{background-image: url("../../media-addon/image-video/tromso4.jpg");}
+#img-tromso2{background-image: url("../../media-addon/image-video/tromso6.jpg");}
+#img-tromso3{background-image: url("../../media-addon/image-video/tromso8.jpg");}
+
+
+/*=====================================Le rocher de Preikestolen=====================================*/
+
+#header-rocher{font-size: 1em; background-image: url("../../media-addon/image-video/rocher12.jpg");}
+
+#img-rocher1{background-image: url("../../media-addon/image-video/rocher6.jpg");}
+#img-rocher2{background-image: url("../../media-addon/image-video/rocher11.jpg");}
+#img-rocher3{background-image: url("../../media-addon/image-video/rocher3.jpg");}
+
+/*=====================================Glacier d'aftobeen===========================================*/
+
+#header-glacier{
+    font-size: 1.2em; 
+    background-image: url("../../media-addon/image-video/glacier.jpg");
+}
+
+/*=====================================Trolltunga===============================================*/
+
+#header-trolltunga{
+    font-size: 2rem; 
+    background-image: url("../../media-addon/image-video/trolltungaFond.jpg");
+}
+
+/*=====================================Alpes de Lygen==================================*/
+
+#header-lygen{
+    font-size: 1.2rem; 
+    background-image: url("../../media-addon/image-video/Lyngen.jpg") ;
+}
+
+/*=====================================Bryggen==================================*/
+
+#header-bryggen{font-size: 2.5em; background-image: url("../../media-addon/image-video/bryggen.jpg");}
+
+#img-bryggen1{background-image: url("../../media-addon/image-video/bryggen12.jpg");}
+#img-bryggen2{background-image: url("../../media-addon/image-video/bryggen13.jpg");}
+#img-bryggen3{background-image: url("../../media-addon/image-video/bryggen14.jpg");}
+
+
+/*=====================================Velmunden==================================*/
+
+#header-velmunden{
+    font-size: 2rem; 
+    background-image: url("../../media-addon/image-video/VelmundenFond.jpg") ;
+}
+
+/*======================================Setesdal======================================*/
+
+#header-setesdal{
+    font-size: 2em; 
+    background-image: url("../../media-addon/image-video/SetesdalFond1.jpg") ;
+}
+
+#img-setesdal1{
+    background-image: url("../../media-addon/image-video/SetesdalLac2.jpg");
+}
+
+/*======================================Mont floyen======================================*/
+
+#header-mont-floyen{font-size: .8em; background-image: url("../../media-addon/image-video/mont-floyen.jpg");}
+
+#img-mont-floyen1{background-image: url("../../media-addon/image-video/mont-floyen12.jpg");}
+#img-mont-floyen2{background-image: url("../../media-addon/image-video/mont-floyen13.jpg");}
+#img-mont-floyen3{background-image: url("../../media-addon/image-video/mont-floyen14.jpg");}
+
+/*======================================Rondane======================================*/
+
+#header-rondane{font-size: 1em; background-image: url("../../media-addon/image-video/Rondane_Montain.jpg");}
+
+#img-rondane1{background-image: url("../../media-addon/image-video/Rondane_moose.jpg");}
+#img-rondane2{background-image: url("../../media-addon/image-video/Rondane_way.jpg");}
+#img-rondane3{background-image: url("../../media-addon/image-video/Rondane_cold.jpg");}
+#img-rondane4{background-image: url("../../media-addon/image-video/Rondane_Road.jpg");}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------Page de région----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+.region {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(to right, #3b3b3b, #0c0c0c);
+    background: linear-gradient(to right, #3b3b3b, #0c0c0c);
+}
+
+.selection_menu {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.selection_menu .vignette {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: white;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,.5);
+    transition: 0.3s ease-in-out;
+}
+
+.selection_menu .vignette:hover {height: 440px;cursor: pointer;}
+
+.selection_menu .vignette .cadre {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2); 
+}
+
+.selection_menu .vignette .cadre img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.selection_menu .vignette .text {
+    position: relative; 
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.selection_menu .vignette:hover .text {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+.region_titre h1 {
+    font-size: 5em;
+    line-height: 35vh;
+}
+
+.clic_vignette {
+    text-decoration: none;
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------responsive----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------*/
+
+
+@media (max-width:400px) {
+
+/*======================================accueil======================================*/
+
+    body{width: 100%;}
+    nav{padding: 10% 0; width: 100%;}
+    nav a{font-size: 2em;}
+    #flag{display: none;}
+    #account{position: relative; margin-left: 10%; font-size: 2em;}
+    header video{display:none;}
+    #header-home, #bloc-sombre{height: 50vh; line-height: 100vh;margin-top: 25vh;}
+    header h1{font-size: 1.5em;}
+    #header-home{
+        background-image: url("../../media-addon/image-video/archipel-fond1.jpg");
+        background-size: cover;
+        background-position: center center no-repeat;
+    }
+    article {margin: 10% 0;padding: 20% 0;}
+    h2{font-size: 1.3em;}
+    #search-button{flex: 4;}
+    .bordure-resultat #lien-resultat {font-size: 80%;}
+
+    #liste-lieux ul{flex-direction: column;}
+    .bloc-lieux:nth-child(2){margin-bottom: -50px;}
+
+    #map{width: 80%;}
+
+    .footer-content{display: flex; flex-direction: column;}
+    .text{color: white; text-decoration: none;}
+    footer{padding-bottom: 20%;}
+
+/*======================================connexion/inscription======================================*/
+
+    .titre-contact h1{font-size: 1em;}
+    .titre-contact h2{font-size: .6em;}
+    .form-control {
+        width: 80%;
+        font-size: 1em;
+        margin-bottom: 1em;
+        height: 2em;
+    }
+    .connexion-submit{padding: 1%;}
+    .connexion-form p{font-size: .5em;}
+    .logged{font-size: .6em;}
+
+/*======================================contenu======================================*/
+
+    .flex-container p {
+        font-size: .8em;
+        text-align: justify;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
